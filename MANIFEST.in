@@ -1,0 +1,5 @@
+include dash_pivottable/dash_pivottable.min.js
+include dash_pivottable/dash_pivottable.dev.js
+include dash_pivottable/metadata.json
+include dash_pivottable/package.json
+include README.md
