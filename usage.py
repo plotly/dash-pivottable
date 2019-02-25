@@ -1,5 +1,7 @@
 import dash_pivottable
 import dash
+import dash_core_components as dcc
+from data import data
 from dash.dependencies import Input, Output
 import dash_html_components as html
 
@@ -8,18 +10,39 @@ app = dash.Dash(__name__)
 app.scripts.config.serve_locally = True
 app.css.config.serve_locally = True
 
+
 app.layout = html.Div([
     dash_pivottable.PivotTable(
-        id='input',
-        value='my-value',
-        label='my-label'
+        id='table',
+        data=data
     ),
-    html.Div(id='output')
+    dcc.Markdown(
+        id='output'
+    )
 ])
 
-@app.callback(Output('output', 'children'), [Input('input', 'value')])
-def display_output(value):
-    return 'You have entered {}'.format(value)
+
+@app.callback(Output('output', 'children'),
+              [Input('table', 'cols'),
+               Input('table', 'rows'),
+               Input('table', 'rowOrder'),
+               Input('table', 'colOrder'),
+               Input('table', 'aggregatorName'),
+               Input('table', 'rendererName')])
+def display_props(cols, rows, row_order, col_order, aggregator, renderer):
+    return """
+        Columns: {}
+        
+        rows: {}
+        
+        rowOrder: {}
+        
+        colOrder: {}
+        
+        aggregatorName: {}
+        
+        rendererName: {}
+    """.format(str(cols), str(rows), row_order, col_order, aggregator, renderer)
 
 
 if __name__ == '__main__':
