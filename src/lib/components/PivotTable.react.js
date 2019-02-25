@@ -1,51 +1,81 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import PivotTableUI from 'react-pivottable/PivotTableUI';
+import 'react-pivottable/pivottable.css';
+import TableRenderers from 'react-pivottable/TableRenderers';
+import Plot from 'react-plotly.js';
+import createPlotlyRenderers from 'react-pivottable/PlotlyRenderers';
+
+// create Plotly renderers via dependency injection
+const PlotlyRenderers = createPlotlyRenderers(Plot);
 
 /**
- * ExampleComponent is an example component.
- * It takes a property, `label`, and
- * displays it.
- * It renders an input with the property `value`
- * which is editable by the user.
+ * ...
  */
 export default class PivotTable extends Component {
+    constructor(props) {
+        super(props);
+        this.state = props;
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(state){
+        const {
+          cols,
+          colOrder,
+          rows,
+          rowOrder,
+          aggregatorName,
+          rendererName
+        } = state;
+
+        if (typeof this.props.setProps === 'function') {
+            this.props.setProps({
+                cols,
+                colOrder,
+                rows,
+                rowOrder,
+                aggregatorName,
+                rendererName
+            });
+        }
+
+        this.setState(state);
+    }
+
     render() {
-        const {id, label, setProps, value} = this.props;
+        const {
+            data,
+            hiddenAttributes,
+            hiddenFromAggregators,
+            hiddenFromDragDrop,
+            menuLimit,
+            unusedOrientationCutoff
+        } = this.props;
 
         return (
-            <div id={id}>
-                ExampleComponent: {label}&nbsp;
-                <input
-                    value={value}
-                    onChange={e => {
-                        /*
-                         * Send the new value to the parent component.
-                         # setProps is a prop that is automatically supplied
-                         * by dash's front-end ("dash-renderer").
-                         * In a Dash app, this will send the data back to the
-                         * Python Dash app server.
-                         * If the component properties are not "subscribed"
-                         * to by a Dash callback, then Dash dash-renderer
-                         * will not pass through `setProps` and it is expected
-                         * that the component manages its own state.
-                         */
-                         if (setProps) {
-                             setProps({
-                                value: e.target.value
-                            });
-                        } else {
-                            this.setState({
-                                value: e.target.value
-                            })
-                        }
-                    }}
-                />
-            </div>
+            <PivotTableUI
+                data={data}
+                onChange={s => this.handleChange(s)}
+                renderers={Object.assign({}, TableRenderers, PlotlyRenderers)}
+                hiddenAttributes={hiddenAttributes}
+                hiddenFromAggregators={hiddenFromAggregators}
+                hiddenFromDragDrop={hiddenFromDragDrop}
+                menuLimit={menuLimit}
+                unusedOrientationCutoff={unusedOrientationCutoff}
+                {...this.state}
+            />
         );
     }
 }
 
-PivotTable.defaultProps = {};
+PivotTable.defaultProps = {
+    menuLimit: 500,
+    unusedOrientationCutoff: 85,
+    hiddenAttributes: [],
+    hiddenFromAggregators: [],
+    hiddenFromDragDrop: []
+};
 
 PivotTable.propTypes = {
     /**
@@ -54,18 +84,80 @@ PivotTable.propTypes = {
     id: PropTypes.string,
 
     /**
-     * A label that will be printed when this component is rendered.
-     */
-    label: PropTypes.string.isRequired,
-
-    /**
-     * The value displayed in the input
-     */
-    value: PropTypes.string,
-
-    /**
      * Dash-assigned callback that should be called whenever any of the
      * properties change
      */
-    setProps: PropTypes.func
+    setProps: PropTypes.func,
+
+    // MODIFIABLE PROPS
+
+    /**
+     * The input data
+     */
+    data: PropTypes.array,
+
+    /**
+     * contains attribute names to omit from the UI
+     */
+    hiddenAttributes: PropTypes.array,
+
+    /**
+     * contains attribute names to omit from the aggregator arguments dropdowns
+     */
+    hiddenFromAggregators: PropTypes.array,
+
+    /**
+     * contains attribute names to omit from the drag'n'drop portion of the UI
+     */
+    hiddenFromDragDrop: PropTypes.array,
+
+    /**
+     * maximum number of values to list in the double-click menu
+     */
+    menuLimit: PropTypes.number,
+
+    /**
+     * If the attributes' names' combined length in characters exceeds this
+     * value then the unused attributes area will be shown vertically to the
+     * left of the UI instead of horizontally above it. 0 therefore means
+     * 'always vertical', and Infinity means 'always horizontal'.
+     */
+    unusedOrientationCutoff: PropTypes.number,
+
+    // PROPS ONLY ACCEPTED AS INPUT TO A CALLBACK
+
+    /**
+     * Which columns are currently in the column area
+     */
+    cols: PropTypes.array,
+
+    /**
+     * the order in which column data is provided to the renderer, must be one
+     * of "key_a_to_z", "value_a_to_z", "value_z_to_a", ordering by value
+     * orders by column total
+     */
+    colOrder: PropTypes.string,
+
+    /**
+     * Which rows is currently inside the row area.
+     */
+    rows: PropTypes.array,
+
+    /**
+     * the order in which row data is provided to the renderer, must be one
+     * of "key_a_to_z", "value_a_to_z", "value_z_to_a", ordering by value
+     * orders by row total
+     */
+    rowOrder: PropTypes.string,
+
+    /**
+     * Which aggregator is currently selected. E.g. Count, Sum, Average, etc.
+     */
+    aggregatorName: PropTypes.string,
+
+    /**
+     * Which renderer is currently selected. E.g. Table, Line Chart, Scatter
+     * Chart, etc.
+     */
+    rendererName: PropTypes.string
 };
