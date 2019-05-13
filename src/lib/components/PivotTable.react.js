@@ -71,7 +71,7 @@ export default class PivotTable extends Component {
 
 PivotTable.defaultProps = {
     menuLimit: 500,
-    unusedOrientationCutoff: 0,
+    unusedOrientationCutoff: 85,
     hiddenAttributes: [],
     hiddenFromAggregators: [],
     hiddenFromDragDrop: []
