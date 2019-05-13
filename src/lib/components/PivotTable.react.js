@@ -71,7 +71,7 @@ export default class PivotTable extends Component {
 
 PivotTable.defaultProps = {
     menuLimit: 500,
-    unusedOrientationCutoff: 85,
+    unusedOrientationCutoff: 0,
     hiddenAttributes: [],
     hiddenFromAggregators: [],
     hiddenFromDragDrop: []
@@ -154,6 +154,16 @@ PivotTable.propTypes = {
      * Which aggregator is currently selected. E.g. Count, Sum, Average, etc.
      */
     aggregatorName: PropTypes.string,
+
+    /**
+     * Vals for the aggregator.
+     */
+    vals: PropTypes.array,
+
+    /**
+     * Value filter for each attibute name.
+     */
+    valueFilter: PropTypes.object,
 
     /**
      * Which renderer is currently selected. E.g. Table, Line Chart, Scatter
