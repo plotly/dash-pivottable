@@ -156,6 +156,16 @@ PivotTable.propTypes = {
     aggregatorName: PropTypes.string,
 
     /**
+     * Vals for the aggregator.
+     */
+    vals: PropTypes.array,
+
+    /**
+     * Value filter for each attibute name.
+     */
+    valueFilter: PropTypes.object,
+
+    /**
      * Which renderer is currently selected. E.g. Table, Line Chart, Scatter
      * Chart, etc.
      */
