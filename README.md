@@ -6,13 +6,16 @@ Dash Pivottable is a Dash component wrapping the [react-pivottable library](http
 
 ## Getting Started
 
-Make sure to clone this project, create a venv and install requirements:
+### Install with virtualenv
+First, install `virtualenv` with `pip install virtualenv`.
+
+Then, make sure to clone this project, create a venv and install requirements:
 ```commandline
-$ git clone https://github.com/xhlulu/dash_pivottable.git
-$ cd dash_pivottable
-$ virtualenv venv
-$ source venv/bin/activate
-$ pip install -r requirements.txt
+git clone https://github.com/xhlulu/dash_pivottable.git
+cd dash_pivottable
+python3 -m venv ./venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 And simply run the example in the venv:
