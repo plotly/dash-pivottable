@@ -21,11 +21,6 @@ source venv/bin/activate  # For Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-To activate in windows, replace the 4th line with this:
-```commandline
-
-```
-
 4. Install the JavaScript dependencies and build the code:
 ```commandline
 npm install
