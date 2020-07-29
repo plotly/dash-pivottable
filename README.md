@@ -1,6 +1,6 @@
 # Dash Pivottable
 
-Dash Pivottable is a Dash component wrapping the [react-pivottable library](https://github.com/plotly/react-pivottable/), created by Nicholas at Plotly. It lets you build interactive pivot tables using purely Python.
+Dash Pivottable is a Dash component wrapping the [react-pivottable library](https://github.com/plotly/react-pivottable/), created by Nicolas at Plotly. It lets you build interactive pivot tables using purely Python.
 
 ![pivot table demo](images/pivottable-demo.gif)
 
