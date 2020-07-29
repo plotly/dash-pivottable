@@ -11,7 +11,7 @@ First, install `virtualenv` with `pip install virtualenv`.
 
 Then, make sure to clone this project, create a venv and install requirements:
 ```commandline
-git clone https://github.com/xhlulu/dash_pivottable.git
+git clone https://github.com/plotly/dash-pivottable.git
 cd dash_pivottable
 python3 -m venv ./venv
 source venv/bin/activate
