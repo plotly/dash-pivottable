@@ -6,11 +6,8 @@ from dash.dependencies import Input, Output
 import dash_html_components as html
 
 app = dash.Dash(__name__)
-
-app.scripts.config.serve_locally = True
-app.css.config.serve_locally = True
-
 app.title = 'My Dash example'
+
 app.layout = html.Div([
     dash_pivottable.PivotTable(
         id='table',
