@@ -41,7 +41,9 @@ The preferred package manager for this project is `npm`. If you are using `yarn`
 Please lint any additions to Python code with `pylint` and `flake8`:
 ```commandline
 flake8 --max-line-length=100 usage.py
+flake8 --max-line-length=100 tests
 pylint usage.py
+pylint tests
 ```
 
 ## Code quality & design
@@ -79,14 +81,8 @@ pip install -r tests/requirements.txt
 
 Run the following tests:
 ```commandline
-python -m unittest tests.test_usage
+pytest tests
 ```
-
-<!-- Look inside the `tests/screenshots` directory to find the images created by the tests. If you have
-Percy configured, run the following test:
-```commandline
-python -m unittest tests.test_percy_snapshot
-```  -->
 
 ### Percy
 
