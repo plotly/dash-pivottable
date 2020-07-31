@@ -13,8 +13,8 @@ Keyword arguments:
 - hiddenAttributes (list; optional): contains attribute names to omit from the UI
 - hiddenFromAggregators (list; optional): contains attribute names to omit from the aggregator arguments dropdowns
 - hiddenFromDragDrop (list; optional): contains attribute names to omit from the drag'n'drop portion of the UI
-- menuLimit (number; optional): maximum number of values to list in the double-click menu
-- unusedOrientationCutoff (number; optional): If the attributes' names' combined length in characters exceeds this
+- menuLimit (number; default 500): maximum number of values to list in the double-click menu
+- unusedOrientationCutoff (number; default 85): If the attributes' names' combined length in characters exceeds this
 value then the unused attributes area will be shown vertically to the
 left of the UI instead of horizontally above it. 0 therefore means
 'always vertical', and Infinity means 'always horizontal'.
