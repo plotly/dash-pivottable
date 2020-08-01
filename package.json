@@ -2,6 +2,14 @@
   "name": "dash_pivottable",
   "version": "0.0.1",
   "description": "Implementation of react-pivottable in Dash (Python)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/plotly/dash-pivottable.git"
+  },
+  "bugs": {
+    "url": "https://github.com/plotly/dash-pivottable/issues"
+  },  
+  "homepage": "https://github.com/plotly/dash-pivottable",
   "main": "build/index.js",
   "scripts": {
     "start": "webpack-serve ./webpack.serve.config.js --open",
