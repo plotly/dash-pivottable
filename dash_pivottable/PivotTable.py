@@ -8,7 +8,7 @@ class PivotTable(Component):
 Pivot tables are useful for interactive presentation of  
 summary statistics computed for data contained in another table.
 
-The `dashPivotTable` function provides a convenient Dash interface 
+This function provides a convenient Dash interface 
 to the `react-pivottable` component, which makes it easy to embed
 pivot tables into Dash for R applications.
 
@@ -21,7 +21,7 @@ Finally, most renderers will create non-React PivotData objects to handle
 the actual computations, which also accept a subset of the same properties
 as the rest of the stack.
 
-The arguments for `dashPivotTable` correspond to properties of the component;
+The arguments for this function correspond to properties of the component;
 a full list is provided below.
 
 `react-pivottable` was developed by Nicolas Kruchten; source
