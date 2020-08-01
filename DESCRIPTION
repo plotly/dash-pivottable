@@ -5,7 +5,7 @@ Description: Pivot tables are useful for interactive presentation of  summary st
 Depends: R (>= 3.0.2)
 Imports: 
 Suggests: dash, dashHtmlComponents, jsonlite
-Authors@R: c(person("Chris", "Parmer", email = "chris@plotly.com", role = c("aut")), c(person("Nicolas", "Kruchten", email = "nicolas@plotly.com", role = c("aut")), c(person("Xing Han", "Lu", email = "xinghan@plotly.com", role = c("trl")), person("Ryan Patrick", "Kyle", email = "ryan@plotly.com", role = c("cre"), comment = c(ORCID = "0000-0002-4958-2844")), person(family = "Plotly Technologies, Inc.", role = "cph"))
+Authors@R: c(person("Chris", "Parmer", email = "chris@plotly.com", role = c("aut")), person("Nicolas", "Kruchten", email = "nicolas@plotly.com", role = c("aut")), person("Xing Han", "Lu", email = "xinghan@plotly.com", role = c("trl")), person("Ryan Patrick", "Kyle", email = "ryan@plotly.com", role = c("cre"), comment = c(ORCID = "0000-0002-4958-2844")), person(family = "Plotly Technologies, Inc.", role = "cph"))
 License: MIT + file LICENSE
 Copyright: Plotly Technologies, Inc.
 URL: https://github.com/plotly/dash-pivottable

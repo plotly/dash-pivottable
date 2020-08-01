@@ -7,7 +7,7 @@ pkg_help_description: >-
 pkg_help_title: >-
     Interactive React-based Pivot Tables for Dash 
 pkg_authors: >-
-    c(person("Chris", "Parmer", email = "chris@plotly.com", role = c("aut")), c(person("Nicolas", "Kruchten", email = "nicolas@plotly.com", role = c("aut")), c(person("Xing Han", "Lu", email = "xinghan@plotly.com", role = c("trl")), person("Ryan Patrick", "Kyle", email = "ryan@plotly.com", role = c("cre"), comment = c(ORCID = "0000-0002-4958-2844")), person(family = "Plotly Technologies, Inc.", role = "cph"))
+    c(person("Chris", "Parmer", email = "chris@plotly.com", role = c("aut")), person("Nicolas", "Kruchten", email = "nicolas@plotly.com", role = c("aut")), person("Xing Han", "Lu", email = "xinghan@plotly.com", role = c("trl")), person("Ryan Patrick", "Kyle", email = "ryan@plotly.com", role = c("cre"), comment = c(ORCID = "0000-0002-4958-2844")), person(family = "Plotly Technologies, Inc.", role = "cph"))
 pkg_copyright: >-
     Plotly Technologies, Inc.
 r_examples:
