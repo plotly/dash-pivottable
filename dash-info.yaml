@@ -11,7 +11,7 @@ pkg_authors: >-
 pkg_copyright: >-
     Plotly Technologies, Inc.
 r_examples:
-    - name: dashPivottable
+    - name: dashPivotTable 
       dontrun: FALSE
       code: |
             # Input data for dashPivottable may be passed in the "list-of-lists"
