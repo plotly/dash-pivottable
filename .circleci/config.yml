@@ -4,6 +4,7 @@ jobs:
     "node":
         docker:
             - image: circleci/node:8.11.3
+            - image: circleci/python:3.6-stretch-browsers
 
         steps:
             - checkout
