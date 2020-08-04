@@ -1,6 +1,6 @@
 {
   "src/lib/components/PivotTable.react.js": {
-    "description": "...",
+    "description": "Pivot tables are useful for interactive presentation of  \nsummary statistics computed for data contained in another table.\n\nThis function provides a convenient Dash interface \nto the `react-pivottable` component, which makes it easy to embed\npivot tables into Dash for R applications.\n\nWithin React, the interactive component provided by `react-pivottable`\nis `PivotTableUI`, but output rendering is delegated to the non-interactive \n`PivotTable` component, which accepts a subset of its properties.\n`PivotTable` in turn delegates to a specific renderer component, such as\nthe default `TableRenderer`, which accepts a subset of the same properties.\nFinally, most renderers will create non-React PivotData objects to handle\nthe actual computations, which also accept a subset of the same properties\nas the rest of the stack.\n\nThe arguments for this function correspond to properties of the component;\na full list is provided below.\n\n`react-pivottable` was developed by Nicolas Kruchten; source\nfor this component is available from https://github.com/plotly/react-pivottable.",
     "displayName": "PivotTable",
     "methods": [
       {
@@ -36,7 +36,7 @@
           "name": "array"
         },
         "required": false,
-        "description": "The input data"
+        "description": "data to be summarized"
       },
       "hiddenAttributes": {
         "type": {
