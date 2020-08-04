@@ -21,10 +21,13 @@ jobs:
                 command: |
                     . venv/bin/activate
                     pip install -r requirements.txt --quiet
+                    pip install -r tests/requirements.txt --quiet
 
             - run:
                 name: Install package.json
-                command: npm i
+                command: |
+                    . venv/bin/activate
+                    npm i
 
             - save_cache:
                 key: deps1-{{ .Branch }}-{{ checksum "package.json" }}
