@@ -5,11 +5,31 @@ from dash.development.base_component import Component, _explicitize_args
 
 class PivotTable(Component):
     """A PivotTable component.
-...
+Pivot tables are useful for interactive presentation of  
+summary statistics computed for data contained in another table.
+
+This function provides a convenient Dash interface 
+to the `react-pivottable` component, which makes it easy to embed
+pivot tables into Dash for R applications.
+
+Within React, the interactive component provided by `react-pivottable`
+is `PivotTableUI`, but output rendering is delegated to the non-interactive 
+`PivotTable` component, which accepts a subset of its properties.
+`PivotTable` in turn delegates to a specific renderer component, such as
+the default `TableRenderer`, which accepts a subset of the same properties.
+Finally, most renderers will create non-React PivotData objects to handle
+the actual computations, which also accept a subset of the same properties
+as the rest of the stack.
+
+The arguments for this function correspond to properties of the component;
+a full list is provided below.
+
+`react-pivottable` was developed by Nicolas Kruchten; source
+for this component is available from https://github.com/plotly/react-pivottable.
 
 Keyword arguments:
 - id (string; optional): The ID used to identify this component in Dash callbacks
-- data (list; optional): The input data
+- data (list; optional): data to be summarized
 - hiddenAttributes (list; optional): contains attribute names to omit from the UI
 - hiddenFromAggregators (list; optional): contains attribute names to omit from the aggregator arguments dropdowns
 - hiddenFromDragDrop (list; optional): contains attribute names to omit from the drag'n'drop portion of the UI

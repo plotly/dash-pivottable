@@ -1,7 +1,15 @@
 {
   "name": "dash_pivottable",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Implementation of react-pivottable in Dash (Python)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/plotly/dash-pivottable.git"
+  },
+  "bugs": {
+    "url": "https://github.com/plotly/dash-pivottable/issues"
+  },  
+  "homepage": "https://github.com/plotly/dash-pivottable",
   "main": "build/index.js",
   "scripts": {
     "start": "webpack-serve ./webpack.serve.config.js --open",
@@ -9,12 +17,13 @@
     "prepublish": "npm run validate-init",
     "build:js-dev": "webpack --mode development",
     "build:js": "webpack --mode production",
-    "build:py": "dash-generate-components ./src/lib/components dash_pivottable",
+    "build:py_and_r": "dash-generate-components ./src/lib/components dash_pivottable && dash-generate-components ./src/lib/components dash_pivottable --r-prefix 'dash' --r-suggests 'dash,dashHtmlComponents,jsonlite'",
     "build:py-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py)",
     "build:all": "npm run build:js && npm run build:js-dev && npm run build:py",
     "build:all-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:all)"
   },
-  "author": "xhlulu xinghan@plot.ly",
+  "author": "Xing Han Lu <xinghan@plotly.com>",
+  "maintainer": "Ryan Patrick Kyle <ryan@plotly.com>",
   "license": "MIT",
   "dependencies": {
     "plotly.js": "^1.54.7",
