@@ -3,7 +3,7 @@ version: 2
 jobs:
     "node":
         docker:
-            - image: circleci/python:3.8.5-node:8.11.3
+            - image: circleci/python:3.7.6-node
 
         steps:
             - checkout
