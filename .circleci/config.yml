@@ -12,6 +12,17 @@ jobs:
                 key: deps1-{{ .Branch }}-{{ checksum "package.json" }}
 
             - run:
+                name: Create virtualenv
+                command: |
+                    python3 -m venv venv
+
+            - run:
+                name: Install requirements
+                command: |
+                    . venv/bin/activate
+                    pip install -r requirements.txt --quiet
+
+            - run:
                 name: Install package.json
                 command: npm i
 
