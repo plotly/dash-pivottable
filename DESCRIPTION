@@ -1,6 +1,6 @@
 Package: dashPivottable
 Title: Interactive React-based Pivot Tables for Dash 
-Version: 0.0.1
+Version: 0.0.2
 Description: Pivot tables are useful for interactive presentation of  summary statistics computed for data contained in another table. The 'dashPivottable' package wraps 'react-pivottable', making it easy to add drag-and-drop tables into your Dash for R applications.
 Depends: R (>= 3.0.2)
 Imports: 
