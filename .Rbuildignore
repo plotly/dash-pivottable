@@ -30,5 +30,6 @@ CHANGELOG.md
 test/
 # CRAN has weird LICENSE requirements
 LICENSE.txt
+LICENSE.md
 ^.*\.Rproj$
 ^\.Rproj\.user$
