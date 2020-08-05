@@ -64,106 +64,108 @@ Chart, etc.}
 # Input data for dashPivottable may be passed in the "list-of-lists"
 # format -- scroll down to see an example which demonstrates how
 # to pass a data.frame into dashPivottable directly.
-library(dash)
-library(dashPivottable)
-library(dashHtmlComponents)
+if (interactive() && require(dash)) {
+  library(dash)
+  library(dashPivottable)
+  library(dashHtmlComponents)
 
-app <- Dash$new()
-app$title("Summary statistics for tips data")
+  app <- Dash$new()
+  app$title("Summary statistics for tips data")
 
-app$layout(
-  htmlDiv(
-    list(
-      dashPivotTable(
-        id = "table",
-        data = tips,
-        cols = list("Day of Week"),
-        colOrder = "key_a_to_z",
-        rows = list("Party Size"),
-        rowOrder = "key_a_to_z",
-        rendererName = "Grouped Column Chart",
-        aggregatorName = "Average",
-        vals = list("Total Bill"),
-        valueFilter = list("Day of Week"=list("Thursday"=FALSE))
-      ),
-      htmlDiv(
-        id = "output"
+  app$layout(
+    htmlDiv(
+      list(
+        dashPivotTable(
+          id = "table",
+          data = tips,
+          cols = list("Day of Week"),
+          colOrder = "key_a_to_z",
+          rows = list("Party Size"),
+          rowOrder = "key_a_to_z",
+          rendererName = "Grouped Column Chart",
+          aggregatorName = "Average",
+          vals = list("Total Bill"),
+          valueFilter = list("Day of Week"=list("Thursday"=FALSE))
+        ),
+        htmlDiv(
+          id = "output"
+        )
       )
     )
   )
-)
 
-app$callback(output = output(id="output", property="children"),
-            params = list(input(id="table", property="cols"),
-                          input(id="table", property="rows"),
-                          input(id="table", property="rowOrder"),
-                          input(id="table", property="colOrder"),
-                          input(id="table", property="aggregatorName"),
-                          input(id="table", property="rendererName")),
-            function(cols, rows, row_order, col_order, aggregator, renderer) {
-              return(
-                list(
-                  htmlP(cols, id="columns"),
-                  htmlP(rows, id="rows"),
-                  htmlP(row_order, id="row_order"),
-                  htmlP(col_order, id="col_order"),
-                  htmlP(aggregator, id="aggregator"),
-                  htmlP(renderer, id="renderer")
+  app$callback(output = output(id="output", property="children"),
+              params = list(input(id="table", property="cols"),
+                            input(id="table", property="rows"),
+                            input(id="table", property="rowOrder"),
+                            input(id="table", property="colOrder"),
+                            input(id="table", property="aggregatorName"),
+                            input(id="table", property="rendererName")),
+              function(cols, rows, row_order, col_order, aggregator, renderer) {
+                return(
+                  list(
+                    htmlP(cols, id="columns"),
+                    htmlP(rows, id="rows"),
+                    htmlP(row_order, id="row_order"),
+                    htmlP(col_order, id="col_order"),
+                    htmlP(aggregator, id="aggregator"),
+                    htmlP(renderer, id="renderer")
+                  )
                 )
-              )
-            }
-)
+              }
+  )
 
-app$run_server(debug=TRUE)
+  app$run_server(debug=TRUE)
 
-# This example illustrates the use of `df_to_list` to format a data.frame
-# for use with dashPivottable
-library(dashTable)
+  # This example illustrates the use of `df_to_list` to format a data.frame
+  # for use with dashPivottable
+  library(dashTable)
 
-app <- Dash$new()
-app$title("Summary statistics for iris data")
+  app <- Dash$new()
+  app$title("Summary statistics for iris data")
 
-app$layout(
-  htmlDiv(
-    list(
-      dashPivotTable(
-        id = "table",
-        data = df_to_list(Loblolly),
-        cols = list("Seed"),
-        colOrder = "key_a_to_z",
-        rows = list("age"),
-        rowOrder = "key_a_to_z",
-        rendererName = "Grouped Column Chart",
-        aggregatorName = "Average",
-        vals = list("height")
-      ),
-      htmlDiv(
-        id = "output"
+  app$layout(
+    htmlDiv(
+      list(
+        dashPivotTable(
+          id = "table",
+          data = df_to_list(Loblolly),
+          cols = list("Seed"),
+          colOrder = "key_a_to_z",
+          rows = list("age"),
+          rowOrder = "key_a_to_z",
+          rendererName = "Grouped Column Chart",
+          aggregatorName = "Average",
+          vals = list("height")
+        ),
+        htmlDiv(
+          id = "output"
+        )
       )
     )
   )
-)
 
-app$callback(output = output(id="output", property="children"),
-            params = list(input(id="table", property="cols"),
-                          input(id="table", property="rows"),
-                          input(id="table", property="rowOrder"),
-                          input(id="table", property="colOrder"),
-                          input(id="table", property="aggregatorName"),
-                          input(id="table", property="rendererName")),
-            function(cols, rows, row_order, col_order, aggregator, renderer) {
-              return(
-                list(
-                  htmlP(cols, id="columns"),
-                  htmlP(rows, id="rows"),
-                  htmlP(row_order, id="row_order"),
-                  htmlP(col_order, id="col_order"),
-                  htmlP(aggregator, id="aggregator"),
-                  htmlP(renderer, id="renderer")
+  app$callback(output = output(id="output", property="children"),
+              params = list(input(id="table", property="cols"),
+                            input(id="table", property="rows"),
+                            input(id="table", property="rowOrder"),
+                            input(id="table", property="colOrder"),
+                            input(id="table", property="aggregatorName"),
+                            input(id="table", property="rendererName")),
+              function(cols, rows, row_order, col_order, aggregator, renderer) {
+                return(
+                  list(
+                    htmlP(cols, id="columns"),
+                    htmlP(rows, id="rows"),
+                    htmlP(row_order, id="row_order"),
+                    htmlP(col_order, id="col_order"),
+                    htmlP(aggregator, id="aggregator"),
+                    htmlP(renderer, id="renderer")
+                  )
                 )
-              )
-            }
-)
+              }
+  )
 
-app$run_server(debug=TRUE)
+  app$run_server(debug=TRUE)
+}
 }
