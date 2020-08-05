@@ -1,6 +1,6 @@
 {
   "name": "dash_pivottable",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Implementation of react-pivottable in Dash (Python)",
   "repository": {
     "type": "git",
