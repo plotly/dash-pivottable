@@ -17,7 +17,7 @@
     "prepublish": "npm run validate-init",
     "build:js-dev": "webpack --mode development",
     "build:js": "webpack --mode production",
-    "build:py_and_r": "dash-generate-components ./src/lib/components dash_pivottable && dash-generate-components ./src/lib/components dash_pivottable --r-prefix 'dash' --r-suggests 'dash,dashHtmlComponents,jsonlite'",
+    "build:py_and_r": "dash-generate-components ./src/lib/components dash_pivottable && dash-generate-components ./src/lib/components dash_pivottable --r-prefix 'dash' --r-suggests 'dash,dashHtmlComponents,dashTable,jsonlite'",
     "build:all": "npm run build:js && npm run build:js-dev && npm run build:py_and_r",
     "build:all-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:all)"
   },
