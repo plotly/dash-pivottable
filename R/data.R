@@ -2,10 +2,10 @@
 #'
 #' In 1990, a server recorded data on all tips received
 #' during a two and a half month period working in a single
-#' restaurant. The restaurant was part of a national chain
+#' US restaurant. The restaurant was part of a national chain
 #' and was located in a suburban shopping center.
 #'
-#' @format A data frame with 244 rows and 7 variables:
+#' @format A list of lists comprising 244 observations and 7 variables:
 #' \describe{
 #'   \item{total_bill}{total bill (cost of the meal), including tax, in US dollars}
 #'   \item{tip}{amount of gratuity received, in US dollars}
