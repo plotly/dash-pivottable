@@ -3,7 +3,7 @@ version: 2
 jobs:
     "node":
         docker:
-            - image: circleci/node:8.11.3
+            - image: circleci/python:3.7-node
 
         steps:
             - checkout
@@ -12,8 +12,22 @@ jobs:
                 key: deps1-{{ .Branch }}-{{ checksum "package.json" }}
 
             - run:
+                name: Create virtualenv
+                command: |
+                    python -m venv venv
+
+            - run:
+                name: Install requirements
+                command: |
+                    . venv/bin/activate
+                    pip install -r requirements.txt --quiet
+                    pip install -r tests/requirements.txt --quiet
+
+            - run:
                 name: Install package.json
-                command: npm i
+                command: |
+                    . venv/bin/activate
+                    npm i
 
             - save_cache:
                 key: deps1-{{ .Branch }}-{{ checksum "package.json" }}
