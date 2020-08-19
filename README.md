@@ -1,3 +1,7 @@
+[![CRAN status](https://www.r-pkg.org/badges/version-ago/dashPivottable)](https://cran.r-project.org/web/packages/dashPivottable/index.html)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/dashPivottable)](https://cran.r-project.org/package=dashPivottable)
+[![](https://cranlogs.r-pkg.org/badges/dashPivottable)](https://cran.r-project.org/package=dashPivottable)
+
 # Dash Pivottable
 
 Dash Pivottable is a Dash component wrapping the [react-pivottable library](https://github.com/plotly/react-pivottable/), created by Nicolas Kruchten. It lets you build interactive pivot tables using purely Python.
