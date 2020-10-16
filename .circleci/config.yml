@@ -4,6 +4,9 @@ jobs:
     "node":
         docker:
             - image: circleci/python:3.7-node
+              auth:
+                  username: dashautomation
+                  password: $DASH_PAT_DOCKERHUB
 
         steps:
             - checkout
@@ -43,6 +46,9 @@ jobs:
     "python-3.6": &test-template
         docker:
             - image: circleci/python:3.6-stretch-browsers
+              auth:
+                  username: dashautomation
+                  password: $DASH_PAT_DOCKERHUB
 
         environment:
             PERCY_ENABLED: True
@@ -96,6 +102,10 @@ jobs:
         <<: *test-template
         docker:
             - image: circleci/python:3.7-stretch-browsers
+              auth:
+                  username: dashautomation
+                  password: $DASH_PAT_DOCKERHUB
+
         environment:
             PERCY_ENABLE: False
 
