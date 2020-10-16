@@ -118,5 +118,5 @@ workflows:
                 context: dash-docker-hub
             - "python-3.7"
                 context: dash-docker-hub
-            - "node"
+            - "node":
                 context: dash-docker-hub
