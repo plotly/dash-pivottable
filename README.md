@@ -61,3 +61,9 @@ Default Values:
 * `hiddenAttributes`: []
 * `hiddenFromAggregators`: []
 * `hiddenFromDragDrop`: []
+
+
+## FAQ
+
+You can find the following FAQs in contributing.md:
+- [Using a modified version of `react-pivottable` in your own `dash-pivottable` project](https://github.com/plotly/dash-pivottable/blob/master/CONTRIBUTING.md#contributing-faq)
