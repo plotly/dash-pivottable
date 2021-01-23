@@ -225,7 +225,7 @@ Now, the following file will have been modified:
 /Utilities.js.map
 ```
 
-You will need to move the following files to a folder inside your `dash-pivottable` project. Then you will need to update your imports in `dash-pivottable/src/lib/components/PivotTable.react.js`:
+You will need to move the modified files to a folder inside your `dash-pivottable` project. Then you will need to update your imports in `dash-pivottable/src/lib/components/PivotTable.react.js`:
 ```
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
