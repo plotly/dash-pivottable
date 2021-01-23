@@ -1,4 +1,4 @@
-# Contributing to Dash Cytoscape
+# Contributing to Dash Pivottable
 
 Thank you for your interesting in contributing to this open-source project! Make sure that you have read and understood our [code of conduct](CODE_OF_CONDUCT.md).
 
@@ -196,3 +196,42 @@ Dash, and many of Plotly's open source products, have been funded through direct
 [Get in touch]: https://plotly.com/products/consulting-and-oem
 [Documentation]: https://github.com/orgs/plotly/projects/8
 [Dash Docs]: https://github.com/plotly/dash-docs
+
+
+## Contributing FAQ
+
+### Using a modified version of `react-pivottable` in your own `dash-pivottable` project
+
+If you want to modify react-pivottable and use it inside your own version of `dash-pivottable`, you will first need to clone the repo:
+```
+git clone https://github.com/plotly/react-pivottable.git  # Change this if it's a fork
+git checkout my-modified-branch
+cd react-pivottable
+npm i
+npm run build
+```
+
+Now, the following file will have been modified:
+```
+/PivotTable.js
+/PivotTable.js.map
+/PivotTableUI.js
+/PivotTableUI.js.map
+/PlotlyRenderers.js
+/PlotlyRenderers.js.map
+/TableRenderers.js
+/TableRenderers.js.map
+/Utilities.js
+/Utilities.js.map
+```
+
+You will need to move the following files to a folder inside your `dash-pivottable` project. Then you will need to update your imports in `dash-pivottable/src/lib/components/PivotTable.react.js`:
+```
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import PivotTableUI from 'path/to/new/build/PivotTableUI';
+import 'path/to/new/build/pivottable.css';
+import TableRenderers from 'path/to/new/build/TableRenderers';
+import Plot from 'react-plotly.js';
+import createPlotlyRenderers from 'path/to/new/build/PlotlyRenderers';
+```
