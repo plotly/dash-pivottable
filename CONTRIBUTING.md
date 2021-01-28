@@ -223,6 +223,7 @@ Now, the following file will have been modified:
 /TableRenderers.js.map
 /Utilities.js
 /Utilities.js.map
+/pivottable.css
 ```
 
 You will need to move the modified files to a folder inside your `dash-pivottable` project. Then you will need to update your imports in `dash-pivottable/src/lib/components/PivotTable.react.js`:
