@@ -61,6 +61,7 @@ Default Values:
 * `hiddenAttributes`: []
 * `hiddenFromAggregators`: []
 * `hiddenFromDragDrop`: []
+* `valueFilter`: []
 
 
 ## FAQ

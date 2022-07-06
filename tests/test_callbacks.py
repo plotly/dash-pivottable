@@ -13,6 +13,7 @@ def test_callbacks(dash_duo):
         'col_order': 'key_a_to_z',
         'aggregator': 'Average',
         'renderer': 'Grouped Column Chart',
+        'data_length': 'Data length: 245',
     }
 
     app = import_app('usage')

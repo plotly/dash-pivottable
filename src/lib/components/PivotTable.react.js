@@ -35,7 +35,6 @@ const PlotlyRenderers = createPlotlyRenderers(Plot);
 export default class PivotTable extends Component {
     constructor(props) {
         super(props);
-        this.state = props;
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -46,7 +45,9 @@ export default class PivotTable extends Component {
           rows,
           rowOrder,
           aggregatorName,
-          rendererName
+          rendererName,
+          valueFilter,
+          vals,
         } = state;
 
         if (typeof this.props.setProps === 'function') {
@@ -56,7 +57,9 @@ export default class PivotTable extends Component {
                 rows,
                 rowOrder,
                 aggregatorName,
-                rendererName
+                rendererName,
+                valueFilter,
+                vals,
             });
         }
 
@@ -70,7 +73,9 @@ export default class PivotTable extends Component {
             hiddenFromAggregators,
             hiddenFromDragDrop,
             menuLimit,
-            unusedOrientationCutoff
+            unusedOrientationCutoff,
+            valueFilter,
+            vals,
         } = this.props;
 
         return (
@@ -83,7 +88,9 @@ export default class PivotTable extends Component {
                 hiddenFromDragDrop={hiddenFromDragDrop}
                 menuLimit={menuLimit}
                 unusedOrientationCutoff={unusedOrientationCutoff}
-                {...this.state}
+                valueFilter={valueFilter}
+                vals={vals}
+                {...this.props}
             />
         );
     }
@@ -94,7 +101,9 @@ PivotTable.defaultProps = {
     unusedOrientationCutoff: 85,
     hiddenAttributes: [],
     hiddenFromAggregators: [],
-    hiddenFromDragDrop: []
+    hiddenFromDragDrop: [], 
+    valueFilter: [],
+    vals: [],
 };
 
 PivotTable.propTypes = {
@@ -181,7 +190,7 @@ PivotTable.propTypes = {
     vals: PropTypes.array,
 
     /**
-     * Value filter for each attibute name.
+     * Value filter for each attribute name.
      */
     valueFilter: PropTypes.object,
 
