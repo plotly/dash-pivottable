@@ -14,6 +14,7 @@ def test_callbacks(dash_duo):
         'aggregator': 'Average',
         'renderer': 'Grouped Column Chart',
         'data_length': 'Data length: 245',
+        'value_filter': "{'Day of Week': {'Thursday': False}}",
     }
 
     app = import_app('usage')
