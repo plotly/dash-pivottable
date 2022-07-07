@@ -18,10 +18,10 @@ def test_callbacks(dash_duo):
     app = import_app('usage')
     dash_duo.start_server(app)
 
-    for prop in expected:
+    for prop, expected_value in expected.items():
         try:
             dash_duo.wait_for_text_to_equal(
-                f'#{prop}', expected[prop], timeout=4
+                f'#{prop}', expected_value, timeout=4
             )
-        except TimeoutException:
-            raise Exception(f"Attribute '{prop}' failed to render correctly.")
+        except TimeoutException as exc:
+            raise Exception(f"Attribute '{prop}' failed to render correctly.") from exc
