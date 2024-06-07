@@ -4,6 +4,13 @@
 
 # Dash Pivottable
 
+<div align="center">
+  <a href="https://dash.plotly.com/project-maintenance">
+    <img src="https://dash.plotly.com/assets/images/maintained-by-plotly.png" width="400px" alt="Maintained by Plotly">
+  </a>
+</div>
+
+
 Dash Pivottable is a Dash component wrapping the [react-pivottable library](https://github.com/plotly/react-pivottable/), created by Nicolas Kruchten. It lets you build interactive pivot tables using purely Python.
 
 ![pivot table demo](images/pivottable-demo.gif)
