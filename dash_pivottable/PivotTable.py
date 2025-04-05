@@ -48,7 +48,7 @@ of "key_a_to_z", "value_a_to_z", "value_z_to_a", ordering by value
 orders by row total
 - aggregatorName (string; optional): Which aggregator is currently selected. E.g. Count, Sum, Average, etc.
 - vals (list; optional): Vals for the aggregator.
-- valueFilter (dict; optional): Value filter for each attibute name.
+- valueFilter (dict; optional): Value filter for each attribute name.
 - rendererName (string; optional): Which renderer is currently selected. E.g. Table, Line Chart, Scatter
 Chart, etc."""
     @_explicitize_args

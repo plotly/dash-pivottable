@@ -133,14 +133,22 @@
           "name": "array"
         },
         "required": false,
-        "description": "Vals for the aggregator."
+        "description": "Vals for the aggregator.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
       },
       "valueFilter": {
         "type": {
           "name": "object"
         },
         "required": false,
-        "description": "Value filter for each attibute name."
+        "description": "Value filter for each attribute name.",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
       },
       "rendererName": {
         "type": {

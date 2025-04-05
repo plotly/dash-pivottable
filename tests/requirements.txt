@@ -5,4 +5,3 @@
 dash[dev,testing]
 flake8
 pylint
-astroid<=2.5,>=2.4.0
